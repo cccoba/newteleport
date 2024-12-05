@@ -1,0 +1,15 @@
+AddCharset UTF-8 .html
+php_value date.timezone 'UTC'
+<FilesMatch "\.(html)$">
+   Header set Cache-Control: "no-cache, no-store"
+   Header unset ETag
+</FilesMatch>
+Header set X-Content-Type-Options nosniff
+# DISABLE CACHING
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+RewriteEngine On
+    RewriteRule ^([^/]+)(?:/([^/]+))?(?:/([^/]+))?/?$ index.php?model=$1&view=$2&id=$3 [L,QSA]

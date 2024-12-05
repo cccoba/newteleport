@@ -1,0 +1,11 @@
+{
+    "require": {
+        "mark-gerarts/auto-mapper-plus": "^1.4",
+        "illuminate/database": "^8.83"
+    },
+    "config": {
+        "platform": {
+            "php": "8.3"
+         }
+    }
+}
